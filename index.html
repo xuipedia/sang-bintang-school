@@ -94,7 +94,11 @@ h3{line-height:1.2;letter-spacing:-.02em}
 .program{border:1px solid var(--line);border-radius:26px;padding:27px;background:white;display:flex;flex-direction:column;min-height:330px;position:relative;transition:transform .22s,box-shadow .22s,border-color .22s}
 .program.highlight{background:var(--ink); color:white; border-color:var(--ink); box-shadow:0 24px 48px rgba(16,29,54,.2); transform:scale(1.02); z-index:2}
 .tag{display:inline-flex;align-self:flex-start;background:#eff4ff;color:var(--blue);font-size:.74rem;font-weight:900;padding:7px 10px;border-radius:999px;margin-bottom:18px}
-.program.highlight .tag {background:var(--lime); color:#172b12}
+.program-head-tags{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+.program.highlight .tag{background:rgba(255,255,255,.1);color:#dce5ef;border:1px solid rgba(255,255,255,.16);margin-bottom:0}
+.badge-rec{display:inline-flex;align-items:center;gap:5px;background:var(--lime);color:#172b12;font-size:.72rem;font-weight:900;letter-spacing:.03em;padding:6px 11px;border-radius:999px;box-shadow:0 4px 14px rgba(223,255,114,.22)}
+.badge-rec i{font-size:.86rem;color:#172b12}
+.alumni-note{font-size:.8rem;font-weight:600;color:#cbd5e1;margin-bottom:14px}
 .program h3{font-size:1.4rem; margin-bottom:8px}
 .program.highlight h3 {font-size:1.6rem; color:var(--lime)}
 .program p{color:var(--muted);font-size:.93rem}
@@ -317,7 +321,11 @@ h3{line-height:1.2;letter-spacing:-.02em}
   <div class="program-grid">
     <!-- KELAS DEWASA/REMAJA -->
     <article class="program highlight" data-type="adult">
-      <span class="tag">DEWASA &amp; REMAJA (UNGGULAN)</span>
+      <div class="program-head-tags">
+        <span class="tag">DEWASA &amp; REMAJA</span>
+        <span class="badge-rec"><i class="ti ti-star-filled"></i> RECOMMENDED</span>
+      </div>
+      <div class="alumni-note">Telah menghasilkan ribuan alumni</div>
       <h3>6 Minggu Bisa</h3>
       <p>Program intensif unggulan untuk membangun penguasaan bahasa Inggris dalam waktu enam minggu.</p>
       <ul><li>3 kali per minggu</li><li>± 2 jam per sesi</li><li>Paket umum Rp4.000.000</li><li>Diskon hingga Rp1.000.000</li><li>Diskon rombongan tersedia</li></ul>
@@ -340,7 +348,11 @@ h3{line-height:1.2;letter-spacing:-.02em}
 
     <!-- KELAS ANAK-ANAK -->
     <article class="program highlight" data-type="kids" style="display:none">
-      <span class="tag">ANAK-ANAK (UNGGULAN)</span>
+      <div class="program-head-tags">
+        <span class="tag">ANAK-ANAK</span>
+        <span class="badge-rec"><i class="ti ti-star-filled"></i> RECOMMENDED</span>
+      </div>
+      <div class="alumni-note">Telah menghasilkan ribuan alumni</div>
       <h3>6 Minggu Bisa</h3>
       <p>Program intensif bahasa Inggris yang diadaptasi khusus untuk daya tangkap anak-anak.</p>
       <ul><li>3 kali per minggu</li><li>± 1,5 jam per sesi</li><li>Paket umum Rp4.000.000</li><li>Diskon hingga Rp1.000.000</li><li>Diskon rombongan tersedia</li></ul>
@@ -563,7 +575,7 @@ h3{line-height:1.2;letter-spacing:-.02em}
       <div class="logo-item hidden-item" title="KPI Surabaya"><img src="no-img.webp" alt="KPI"></div>
     </div>
     <div style="margin-top:16px;">
-      <button class="btn btn-outline" style="font-size:0.85rem; padding:9px 18px;" type="button" onclick="showMoreItems('mitra-container', this)">Lihat 7+ instansi lainnya</button>
+      <button class="btn btn-outline" style="font-size:0.85rem; padding:9px 18px;" type="button" onclick="showMoreItems('mitra-container', this)">Lihat 16+ instansi lainnya</button>
     </div>
 
   </div>
@@ -575,7 +587,7 @@ h3{line-height:1.2;letter-spacing:-.02em}
 <form class="registration-form" id="registrationForm">
 <label class="form-field"><span>Nama lengkap</span><input name="name" placeholder="Nama Anda" required type="text"/></label>
 <label class="form-field"><span>Nomor WhatsApp</span><input name="phone" placeholder="08xxxxxxxxxx" required type="tel"/></label>
-<label class="form-field"><span>Program yang diminati</span><select name="program" required><option value="" disabled selected>Pilih program</option><option value="6 Minggu Bisa">6 Minggu Bisa (Unggulan)</option><option value="6 Bulan Bisa">6 Bulan Bisa</option><option value="6 Hari Bisa">6 Hari Bisa</option><option value="Genius English">Genius English</option><option value="Konsultasi dulu">Belum yakin / konsultasi</option></select></label>
+<label class="form-field"><span>Program yang diminati</span><select name="program" required><option value="" disabled selected>Pilih program</option><option value="6 Minggu Bisa">6 Minggu Bisa (Recommended)</option><option value="6 Bulan Bisa">6 Bulan Bisa</option><option value="6 Hari Bisa">6 Hari Bisa</option><option value="Genius English">Genius English</option><option value="Konsultasi dulu">Belum yakin / konsultasi</option></select></label>
 <label class="form-field"><span>Wilayah Kelas</span><select name="city" required><option value="" disabled selected>Pilih kota</option><option value="Pontianak">Pontianak</option><option value="Semarang">Semarang</option><option value="Bandung">Bandung</option><option value="Surabaya">Surabaya</option><option value="Jogja">Jogja</option><option value="Lainnya">Kota lainnya</option></select></label>
 <button class="btn btn-blue" style="grid-column:1/-1;" type="submit">Kirim minat melalui WhatsApp <i class="ti ti-brand-whatsapp" style="font-size:1.2rem"></i></button>
 </form></div></section>
